@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #C9CEE6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.FXML_PartController">
+   <children>
+      <GridPane layoutX="38.0" layoutY="110.0" prefHeight="400.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="136.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="127.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="110.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="391.0" spacing="30.0" GridPane.columnSpan="3" GridPane.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="partTitle" text="Add Part">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="inhouseBtn" mnemonicParsing="false" onAction="#changePartType" selected="true" text="In-House" GridPane.columnIndex="1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="partType" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="outsourcedBtn" mnemonicParsing="false" onAction="#changePartType" selected="true" text="Outsourced" toggleGroup="$partType" GridPane.columnIndex="2" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </HBox>
+            <TextField fx:id="partIdVal" disable="true" text="Auto Gen - Disabled" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="partNameVal" promptText="Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="partQtyVal" promptText="Quantity" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="partCostVal" promptText="Price" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <HBox alignment="CENTER_LEFT" spacing="25.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5">
+               <children>
+                  <TextField fx:id="partMaxVal" prefWidth="70.0" promptText="Max" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label text="Min">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="partMinVal" prefWidth="70.0" promptText="Min" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+               </children>
+            </HBox>
+            <TextField fx:id="mfrVal" promptText="Company Name" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <HBox alignment="CENTER_RIGHT" spacing="20.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7">
+               <children>
+                  <Button fx:id="savePartBtn" mnemonicParsing="false" onAction="#addPart" prefWidth="80.0" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Button fx:id="cancelPartBtn" mnemonicParsing="false" onAction="#cancelWindow" prefWidth="80.0" text="Cancel" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+               </children>
+               <GridPane.margin>
+                  <Insets right="20.0" />
+               </GridPane.margin>
+            </HBox>
+            <Label text="ID" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="30.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label text="Name" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="30.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label text="Inventory" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="30.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label text="Price/Cost" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="30.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label text="Max" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="30.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="mfrLabel" text="Company Name" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets left="30.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </GridPane>
+   </children>
+</AnchorPane>
